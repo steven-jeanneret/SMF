@@ -24,6 +24,11 @@ public class BoardRepositoryDAO  implements BoardDAO {
     }
 
     @Override
+    public Board find(Long id) {
+        return brepo.findById(id).orElse(new Board());
+    }
+
+    @Override
     public void save(@Valid Board board) {
         brepo.save(board);
     }

@@ -28,11 +28,17 @@ public class Board {
     }
 
     public Board() {
-
+        super();
+        this.nom = "Default board";
+        this.description = "Default board";
     }
 
     public String getNom() {
         return nom;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setNom(String nom) {

@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 
 @Controller
-public class AccueilController {
+public class BoardController {
     @Autowired
     BoardDAO boardDAO;
 
-    @GetMapping("/")
-    public String accueil(Map<String, Object> model) {
-        model.put("boards", boardDAO.findAll());
-        return "accueil";
+    @GetMapping("/produits")
+    public String accueil(Map<String, Object> model, Long id) {
+        model.put("board", boardDAO.find(id));
+        return "board";
     }
-
 }
