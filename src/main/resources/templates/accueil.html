@@ -12,14 +12,12 @@
         <tr>
             <th scope="col">Nom</th>
             <th scope="col">Description</th>
-            <th scope="col">Link</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="board: ${boards}">
-            <td th:text="${board.nom}"/>
+            <td><a th:href="@{/produits?id=__${board.id}__}"><span th:text="${board.nom}"/></a></span>
             <td th:text="${board.description}"/>
-            <td><a th:href="@{/produits?id=__${board.id}__}">Link</a></td>
         </tr>
         </tbody>
     </table>
